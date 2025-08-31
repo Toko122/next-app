@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 app.use(express.json())
-app.use(cors({origin: 'http://localhost:3000'}))
+app.use(cors({origin: 'https://next-app-ocg8.vercel.app/'}))
 
 const userRouter = require('./router/userRouter')
 const imageRouter = require('./router/uploadRouter')

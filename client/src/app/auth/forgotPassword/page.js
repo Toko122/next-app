@@ -3,7 +3,7 @@
 import axios from '../../axios'
 import React, { useState } from 'react'
 
-const page = () => {
+const ForgotPassword = () => {
 
       const [form, setForm] = useState({email: ''})
       const [loading, setLoading] = useState(false)
@@ -48,4 +48,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ForgotPassword

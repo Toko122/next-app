@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
-const page = () => {
+   const ResetPassword= () => {
 
     const { token } = useParams()
     const navigate = useRouter()
@@ -90,4 +90,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ResetPassword

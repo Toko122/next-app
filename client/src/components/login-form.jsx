@@ -109,11 +109,10 @@ export function LoginForm({
               <div className="grid gap-3">
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
+                  <Link href={'/auth/forgotPassword'}
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline w-fit">
                     Forgot your password?
-                  </a>
+                  </Link>
                 </div>
                 <Input onChange={handleChange} placeholder='Password' name='password' id="password" type="password" required />
               </div>
@@ -125,7 +124,7 @@ export function LoginForm({
                 </p>
               }
 
-              <Link href={'/auth/forgotPassword'} className="w-full text-left text-indigo-600 hover:underline">Forgot Password?</Link>
+          
 
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full bg-[#1e1e1e] cursor-pointer text-white hover:bg-[#141414] transition duration-200">

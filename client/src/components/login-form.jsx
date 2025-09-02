@@ -77,7 +77,7 @@ export function LoginForm({
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      const res = await axios.post('/users/google-auth', {
+      const res = await axios.post('/users/google-auth/callback', {
         token: credentialResponse.credential
       })
       localStorage.setItem('token', res.data.token)

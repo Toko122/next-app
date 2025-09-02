@@ -111,11 +111,11 @@ export function LoginForm({
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline w-fit">
                     Forgot your password?
                   </a>
                 </div>
-                <Input onChange={handleChange} name='password' id="password" type="password" required />
+                <Input onChange={handleChange} placeholder='Password' name='password' id="password" type="password" required />
               </div>
 
               {

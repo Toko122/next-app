@@ -50,20 +50,20 @@ export function RegisterForm() {
       return;
     }
 
-    if(form.job === ''){
-        setJobMessage('Select your job')
-        setTimeout(() => setJobMessage(''), 2000)
-        return;
+    if (form.job === '') {
+      setJobMessage('Select your job')
+      setTimeout(() => setJobMessage(''), 2000)
+      return;
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/users/register', form)
+      const res = await axios.post('/users/register', form)
       router.push('/auth/login')
     } catch (err) {
       console.log('error register user', err);
       setMessage(err.response?.data?.message || 'Server Error')
       setTimeout(() => setMessage(''), 2000)
-    }finally{
+    } finally {
       setLoading(false)
     }
   }
@@ -148,43 +148,43 @@ export function RegisterForm() {
       </div>
       */}
 
-                 <div className='flex flex-col gap-2 w-full'>
-                     <Label className='font-semibold'>Your Job:</Label>
-                     <select
-                       name="job"
-                       value={form.job}
-                       onChange={handleChange}
-                       className="border rounded-lg px-2 py-2 bg-white hover:bg-gray-100 cursor-pointer"
-                     >
-                       <option value="">Select your job</option>
-                       <option value="Software Engineer">Software Engineer</option>
-                       <option value="Product Manager">Product Manager</option>
-                       <option value="Designer">Designer</option>
-                       <option value="Data Scientist">Data Scientist</option>
-                       <option value="Marketing Specialist">Marketing Specialist</option>
-                       <option value="Sales Manager">Sales Manager</option>
-                       <option value="Human Resources">Human Resources</option>
-                       <option value="Teacher">Teacher</option>
-                       <option value="Doctor">Doctor</option>
-                       <option value="Nurse">Nurse</option>
-                       <option value="Lawyer">Lawyer</option>
-                       <option value="Student">Student</option>
-                       <option value="Other">Other</option>
-                     </select>
-                 </div> 
+        <div className='flex flex-col gap-2 w-full'>
+          <Label className='font-semibold'>Your Job:</Label>
+          <select
+            name="job"
+            value={form.job}
+            onChange={handleChange}
+            className="border rounded-lg px-2 py-2 bg-white hover:bg-gray-100 cursor-pointer"
+          >
+            <option value="">Select your job</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Designer">Designer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Marketing Specialist">Marketing Specialist</option>
+            <option value="Sales Manager">Sales Manager</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Student">Student</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-                 {
-                  jobMessage &&
-                  <p className='w-full p-2 bg-[rgba(249,103,103,0.7)] text-white font-semibold rounded-md'>
-                  {jobMessage}
-                  </p>
-                 }
+        {
+          jobMessage &&
+          <p className='w-full p-2 bg-[rgba(249,103,103,0.7)] text-white font-semibold rounded-md'>
+            {jobMessage}
+          </p>
+        }
 
         <Button
           type="submit"
           className="w-full bg-[#eee] cursor-pointer py-5.5 text-1xl px-4 hover:bg-[#dddcdc] transition duration-200"
         >
-          {loading ?<ButtonLoading /> : 'Register'}
+          {loading ? <ButtonLoading /> : 'Register'}
         </Button>
 
         {message && (

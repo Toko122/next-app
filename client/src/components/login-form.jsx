@@ -96,14 +96,14 @@ export function LoginForm({
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter your username below to login to your account
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="Username">Email</Label>
+                <Label htmlFor="Username">Username</Label>
                 <Input onChange={handleChange} name='username' id="username" type="text" placeholder="Username" required />
               </div>
               <div className="grid gap-3">

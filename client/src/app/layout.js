@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         
+      <GoogleOAuthProvider clientId={process.env.CLIENT_ID}>
         <AuthProvider>
           <Navbar />
-          <GoogleOAuthProvider clientId={process.env.CLIENT_ID}>
           {children}
-          </GoogleOAuthProvider>
         </AuthProvider>
+        </GoogleOAuthProvider>
         
       </body>
     </html>

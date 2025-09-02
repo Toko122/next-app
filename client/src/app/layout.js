@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         
-      <GoogleOAuthProvider clientId={process.env.CLIENT_ID}>
+      <GoogleOAuthProvider clientId='1012457994239-tsacsh4u34himgkpj1ve9a94dugm0iia.apps.googleusercontent.com'>
         <AuthProvider>
           <Navbar />
           {children}

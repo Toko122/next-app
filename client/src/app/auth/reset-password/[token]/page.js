@@ -41,6 +41,7 @@ import React, { useState } from 'react'
         } catch (err) {
             console.log('error resetting password', err)
             setError(err.response?.data?.message || 'Something went wrong')
+            setTimeout(() => setError(''), 3000)
         } finally {
             setLoading(false)
         }

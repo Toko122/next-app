@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'https://next-app-796d.onrender.com',
+    baseURL: 'https://next-app-796d.onrender.com/api',
     withCredentials: true
 })
 

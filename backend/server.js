@@ -7,7 +7,7 @@ dotenv.config()
 
 app.use(express.json())
 app.use(cors({
-    origin: 'https://next-app-ocg8.vercel.app',
+    origin: 'https://next-app-ocg8-6r12leuqx-toko122s-projects.vercel.app',
     credentials: true
 }))
 

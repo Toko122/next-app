@@ -6,7 +6,7 @@ const {protect} = require('../middleware/protect.js')
 
 router.post('/register', registerUser)
 router.post('/login', loginUser)
-router.post('/google-auth', googleAuth)
+router.post('/google-auth/callback', googleAuth)
 router.get('/allUsers', getAllUser)
 router.put('/editProfile/:id', protect, editProfile)
 router.post('/sendEmail', sendEmail)

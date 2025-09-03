@@ -45,7 +45,7 @@ const Home = () => {
 
                 {
                     loading ? (
-                        <ButtonLoading />
+                        <span className='animation-spin'>Loading...</span>
                        ) :
                         (
                             

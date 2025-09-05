@@ -25,9 +25,9 @@ export function PostsChart() {
     fetchPosts()
   }, [])
 
-  if (chartData.length === 0) return <div>No Post yet</div>;
-
   if (loading) return <ButtonLoading />
+
+  if (chartData.length === 0) return <div>No Post yet</div>;
 
   return (
     <div className="w-full h-64">

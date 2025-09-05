@@ -23,7 +23,8 @@ const Navbar = () => {
   const router = useRouter()
 
   const location = usePathname()
-  if(location.startsWith('/admin')){
+  const isAdminRoute = location.startsWith('/admin');
+  if(isAdminRoute){
     return null;
   }
   

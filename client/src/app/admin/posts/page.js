@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import AdminSidebar from '../AdminSidebar'
 import AdminPosts from '../AdminPosts'

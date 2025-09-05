@@ -15,7 +15,7 @@ const Home = () => {
 
     const [loggedUser, setLoggedUser] = useState(null)
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setLoggedUser(localStorage.getItem('token'))
@@ -26,6 +26,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchUser = async () => {
+            setLoading(true)
             try {
                 const res = await axios.get(`/users/allUsers`)
                 setUsers(res.data)

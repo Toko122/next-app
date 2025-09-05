@@ -17,11 +17,11 @@ const Home = () => {
 
     const [loading, setLoading] = useState(false)
 
+    const visibleUsers = users.slice(0, visibleCount)
+
     useEffect(() => {
         setLoggedUser(localStorage.getItem('token'))
     }, [])
-
-    const visibleUsers = users.slice(0, visibleCount)
 
 
     useEffect(() => {

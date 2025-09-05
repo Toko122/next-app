@@ -7,6 +7,7 @@ import Link from 'next/link'
 import axios from '../axios'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -21,6 +22,10 @@ const Navbar = () => {
   const { isLoggedIn, logout, userId } = useAuth()
   const router = useRouter()
 
+  const location = usePathname()
+  if(location.startsWith('/admin')){
+    return null;
+  }
   
   useEffect(() => {
     setMounted(true)

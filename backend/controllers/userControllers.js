@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 const { OAuth2Client } = require('google-auth-library')
 const nodemailer = require('nodemailer')
 const crypto = require('crypto')
+const { group } = require('console')
 
 const Client = new OAuth2Client(process.env.CLIENT_ID)
 
@@ -250,5 +251,33 @@ exports.resetPassword = async (req, res) => {
      }catch(err){
         res.status(500).json({message: 'error reseting password', error: err.message})
 
+     }
+}
+
+
+exports.getUserByMonth = async (req, res) => {
+     try{
+       const user = await User.aggregate([
+          {
+            $group: {
+              _id: {$month: '$createdAt'},
+              count: {$sum: 1}
+            }
+          },
+          {$sort: {'_id': 1}}
+       ])
+
+       const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      const result = user.map((u) => ({
+        month: months[u._id - 1],
+        users: u.count
+      }))
+      res.status(200).json(result);
+     }catch(err){
+      res.status(500).json({message: "error getting all users by month", error: err.message})
      }
 }

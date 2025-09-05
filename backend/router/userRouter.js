@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {registerUser, loginUser, googleAuth, getAllUser, editProfile, resetPassword, sendEmail} = require('../controllers/userControllers.js')
+const {registerUser, loginUser, googleAuth, getAllUser, editProfile, resetPassword, sendEmail, getUserByMonth} = require('../controllers/userControllers.js')
 const User = require('../models/user.js')
 const {protect} = require('../middleware/protect.js')
 
@@ -8,9 +8,11 @@ router.post('/register', registerUser)
 router.post('/login', loginUser)
 router.post('/google-auth/callback', googleAuth)
 router.get('/allUsers', getAllUser)
+router.get('/getUsersByMonth', getUserByMonth)
 router.put('/editProfile/:id', protect, editProfile)
 router.post('/sendEmail', sendEmail)
 router.post('/resetPassword/:token', resetPassword)
+
 
 
 router.get('/:id', async(req, res) => {

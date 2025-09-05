@@ -47,3 +47,33 @@ exports.deletePost = async (req, res) =>{
       res.status(500).json({message: 'cannot delete post', error: err.message})
     }
 }
+
+exports.getAllPostsByMonth = async(req, res) => {
+      try{
+        const post = await Post.aggregate([
+          {
+            $group: {
+              _id: {$month: '$createdAt'},
+              count: {$sum: 1}
+            }
+          },
+          {$sort: {'_id': 1}}
+       ])
+
+       
+
+       const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      const result = post.map((u) => ({
+        month: months[u._id - 1],
+        posts: u.count
+      }))
+      res.status(200).json(result);
+
+      }catch(err){
+        res.status(500).json({message: "error getting posts by month", error: err.message})
+      }
+}

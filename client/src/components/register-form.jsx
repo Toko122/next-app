@@ -35,24 +35,28 @@ export function RegisterForm() {
     if (!form.email) {
       setEmailMessage('Enter a valid email');
       setTimeout(() => setEmailMessage(''), 2000);
+      setLoading(false);
       return;
     }
 
     if (!form.username || form.username.trim().length < 6) {
       setUsernameMessage('Username must be more than 6 characters')
       setTimeout(() => setUsernameMessage(''), 2000)
+      setLoading(false);
       return;
     }
 
     if (!form.password || form.password.trim().length < 6) {
       setPasswordMessage('Password must be more than 6 characters')
       setTimeout(() => setPasswordMessage(''), 2000)
+      setLoading(false);
       return;
     }
 
     if (form.job === '') {
       setJobMessage('Select your job')
       setTimeout(() => setJobMessage(''), 2000)
+      setLoading(false);
       return;
     }
 

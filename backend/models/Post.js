@@ -8,8 +8,7 @@ const PostSchema = mongoose.Schema({
         text: { type: String, required: true },
         createdAt: { type: Date, default: Date.now }
     }],
-    createdAt: {type: Date, default: Date.now},
     imageUrl: {type: String},
-})
+}, {timestamps: true})
 
 module.exports = mongoose.model("Post", PostSchema)

@@ -24,9 +24,7 @@ const Navbar = () => {
 
   const location = usePathname()
   const isAdminRoute = location.startsWith('/admin');
-  if(isAdminRoute){
-    return null;
-  }
+  
   
   useEffect(() => {
     setMounted(true)
@@ -85,6 +83,8 @@ const Navbar = () => {
       router.push('/auth/login')
     }
   }
+
+  if(isAdminRoute) return null;
 
   return (
     <nav className="w-full bg-gray-800 text-white px-6 py-3 fixed top-0 shadow-md z-50">

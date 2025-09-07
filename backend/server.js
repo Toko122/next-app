@@ -7,7 +7,7 @@ dotenv.config()
 
 app.use(express.json())
 app.use(cors({
-    origin: ['https://next-app-ocg8-rdyr2srt2-toko122s-projects.vercel.app', 'http://localhost:3000'],
+    origin: ['https://next-app-ocg8-ofevrlumn-toko122s-projects.vercel.app', 'http://localhost:3000'],
     credentials: true
 }))
 

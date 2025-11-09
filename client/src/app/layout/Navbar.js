@@ -151,7 +151,7 @@ const Navbar = () => {
               href="/auth/login"
               className="text-center w-[100px] cursor-pointer py-2 px-4 rounded-lg hover:bg-gray-700 transition"
             >
-              Sign up
+              Sign in
             </Link>
           )}
 
